@@ -14,7 +14,7 @@
         <span asp-validation-for="MovieID"></span>*@
 
         <label>Category:</label>
-        <select id="movCategory" asp-for="Category.CategoryID">
+        <select id="movCategory" asp-for="CategoryID">
             <!--changing to asp-for="Category" did not do anything-->
             <option value="">Select a Category: </option>
             @foreach (Category c in ViewBag.CategoriesList)
@@ -22,8 +22,7 @@
                 <option value="@c.CategoryID">@c.CategoryName</option>
             }
         </select>
-        <span asp-validation-for="Category.CategoryID"></span>
-        <input id="categoryId" asp-for="Category.CategoryID" type="hidden" />
+        @*<span asp-validation-for="Category.CategoryID"></span>*@
 
         <br />
         <label>Title: </label>
