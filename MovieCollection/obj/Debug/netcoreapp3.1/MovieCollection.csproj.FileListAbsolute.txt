@@ -65,8 +65,6 @@ C:\Users\tyisb\source\repos\MovieCollection\MovieCollection\obj\Debug\netcoreapp
 C:\Users\tyisb\source\repos\MovieCollection\MovieCollection\obj\Debug\netcoreapp3.1\MovieCollection.RazorAssemblyInfo.cache
 C:\Users\tyisb\source\repos\MovieCollection\MovieCollection\obj\Debug\netcoreapp3.1\MovieCollection.RazorAssemblyInfo.cs
 C:\Users\tyisb\source\repos\MovieCollection\MovieCollection\obj\Debug\netcoreapp3.1\staticwebassets\MovieCollection.StaticWebAssets.Manifest.cache
-C:\Users\tyisb\source\repos\MovieCollection\MovieCollection\obj\Debug\netcoreapp3.1\staticwebassets\MovieCollection.StaticWebAssets.xml
-C:\Users\tyisb\source\repos\MovieCollection\MovieCollection\obj\Debug\netcoreapp3.1\scopedcss\bundle\MovieCollection.styles.css
 C:\Users\tyisb\source\repos\MovieCollection\MovieCollection\obj\Debug\netcoreapp3.1\MovieCollection.TagHelpers.input.cache
 C:\Users\tyisb\source\repos\MovieCollection\MovieCollection\obj\Debug\netcoreapp3.1\MovieCollection.TagHelpers.output.cache
 C:\Users\tyisb\source\repos\MovieCollection\MovieCollection\obj\Debug\netcoreapp3.1\MovieCollection.RazorCoreGenerate.cache
@@ -87,3 +85,5 @@ C:\Users\tyisb\source\repos\MovieCollection\MovieCollection\obj\Debug\netcoreapp
 C:\Users\tyisb\source\repos\MovieCollection\MovieCollection\obj\Debug\netcoreapp3.1\MovieCollection.pdb
 C:\Users\tyisb\source\repos\MovieCollection\MovieCollection\obj\Debug\netcoreapp3.1\MovieCollection.genruntimeconfig.cache
 C:\Users\tyisb\source\repos\MovieCollection\MovieCollection\obj\Debug\netcoreapp3.1\MovieCollection.csproj.AssemblyReference.cache
+C:\Users\tyisb\source\repos\MovieCollection\MovieCollection\obj\Debug\netcoreapp3.1\staticwebassets\MovieCollection.StaticWebAssets.xml
+C:\Users\tyisb\source\repos\MovieCollection\MovieCollection\obj\Debug\netcoreapp3.1\scopedcss\bundle\MovieCollection.styles.css

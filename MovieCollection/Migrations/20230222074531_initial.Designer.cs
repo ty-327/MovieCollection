@@ -8,8 +8,8 @@ using MovieCollection.Models;
 namespace MovieCollection.Migrations
 {
     [DbContext(typeof(MovieCollectionContext))]
-    [Migration("20230221233551_Initial")]
-    partial class Initial
+    [Migration("20230222074531_initial")]
+    partial class initial
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
