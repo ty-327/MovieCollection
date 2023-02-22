@@ -9,26 +9,34 @@
     <p>Use the form below to enter a movie:</p>
 
     <form method="post">
-        <input id="movieID" asp-for="MovieID" type="hidden" />
 
-        <label>Category ID: </label>
-        <select id="movCategory" asp-for="CategoryID">
+        @*<input id="movieID" asp-for="MovieID" type="hidden" />
+        <span asp-validation-for="MovieID"></span>*@
+
+        <label>Category:</label>
+        <select id="movCategory" asp-for="Category.CategoryID">
+            <!--changing to asp-for="Category" did not do anything-->
             <option value="">Select a Category: </option>
             @foreach (Category c in ViewBag.CategoriesList)
             {
                 <option value="@c.CategoryID">@c.CategoryName</option>
             }
         </select>
+        <span asp-validation-for="Category.CategoryID"></span>
+        <input id="categoryId" asp-for="Category.CategoryID" type="hidden" />
 
         <br />
         <label>Title: </label>
         <input id="movTitle" asp-for="Title" /><br />
+        <span asp-validation-for="Title"></span>
 
         <label>Year: </label>
         <input id="movYear" asp-for="Year" /><br />
+        <span asp-validation-for="Year"></span>
 
         <label>Director: </label>
         <input id="movDirector" asp-for="Director" /><br />
+        <span asp-validation-for="Director"></span>
 
         <label>Rating: </label>
         <select asp-for="Rating">
@@ -37,20 +45,24 @@
             <option id="ratingPG-13">PG-13</option>
             <option id="ratingR">R</option>
         </select>
+        <span asp-validation-for="Rating"></span>
         <br />
 
-        <label>Edited (Yes/No): </label> <!--Maybe make this a radio button idk-->
+        <label>Edited (Yes/No): </label>
         <select asp-for="Edited">
             <option value="true" id="editedYes">Yes</option>
             <option value="false" id="editedNo">No</option>
         </select>
+        <span asp-validation-for="Edited"></span>
         <br />
 
         <label>Lent To: </label>
         <input id="movLentTo" asp-for="Lent_To" /><br />
+        <span asp-validation-for="Lent_To"></span>
 
         <label>Notes: </label>
         <input id="movNotes" asp-for="Notes" maxlength="25" /><br />
+        <span asp-validation-for="Notes"></span>
 
         <input id="submitBtn" type="submit" value="Enter Movie" />
 

@@ -37,6 +37,7 @@ namespace MovieCollection.Controllers
         [HttpPost]
         public IActionResult EnterMovies(EnterMovieModel model)
         {
+            /*model.MovieID = 1;*/ //chatGPT added, maybe change
             if (ModelState.IsValid) //If valid
             {
                 blahContext.Add(model); //get data from form and pass it into blahcontext variable
