@@ -9,9 +9,18 @@
     <p>Use the form below to enter a movie:</p>
 
     <form method="post">
-        <label>Category: </label>
-        <input id="movCategory" asp-for="Category" /><br />
+        <input id="movieID" asp-for="MovieID" type="hidden" />
 
+        <label>Category ID: </label>
+        <select id="movCategory" asp-for="CategoryID">
+            <option value="">Select a Category: </option>
+            @foreach (Category c in ViewBag.CategoriesList)
+            {
+                <option value="@c.CategoryID">@c.CategoryName</option>
+            }
+        </select>
+
+        <br />
         <label>Title: </label>
         <input id="movTitle" asp-for="Title" /><br />
 

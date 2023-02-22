@@ -9,21 +9,33 @@ namespace MovieCollection.Models
     public class EnterMovieModel
     {
         [Key]
-        [Required]
+        [Required(ErrorMessage = "Movie ID Required!")]
         public int MovieID { get; set; }
-        [Required]
-        public string Category { get; set; }
-        [Required]
+
+        [Required(ErrorMessage = "Movie Title Required!")]
         public string Title { get; set; }
-        [Required]
+
+        [Required(ErrorMessage = "Movie Year Required!")]
+        [Range(1800, 2200, ErrorMessage = "Please enter a valid year.")]
         public int Year { get; set; }
-        [Required]
+
+        [Required(ErrorMessage = "Movie Director Required!")]
         public string Director { get; set; }
-        [Required]
+
+        [Required(ErrorMessage = "Movie Rating Required!")]
         public string Rating { get; set; }
-        public bool Edited { get; set; } // maybe make this a boolean "bool"
+
+        public bool Edited { get; set; }
+
         public string Lent_To { get; set; }
+
         public string Notes { get; set; }
+
+        //Build foreign key relationship
+        [Required(ErrorMessage = "Movie Category Required!")]
+        public int CategoryID { get; set; }
+        [Required(ErrorMessage = "Movie Category Required!")]
+        public Category Category { get; set; }
 
     }
 }

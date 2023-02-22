@@ -15,15 +15,70 @@ namespace MovieCollection.Migrations
             modelBuilder
                 .HasAnnotation("ProductVersion", "3.1.32");
 
+            modelBuilder.Entity("MovieCollection.Models.Category", b =>
+                {
+                    b.Property<int>("CategoryID")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("INTEGER");
+
+                    b.Property<string>("CategoryName")
+                        .HasColumnType("TEXT");
+
+                    b.HasKey("CategoryID");
+
+                    b.ToTable("Categories");
+
+                    b.HasData(
+                        new
+                        {
+                            CategoryID = 1,
+                            CategoryName = "Action"
+                        },
+                        new
+                        {
+                            CategoryID = 2,
+                            CategoryName = "Adventure"
+                        },
+                        new
+                        {
+                            CategoryID = 3,
+                            CategoryName = "Comedy"
+                        },
+                        new
+                        {
+                            CategoryID = 4,
+                            CategoryName = "Romance"
+                        },
+                        new
+                        {
+                            CategoryID = 5,
+                            CategoryName = "Horror"
+                        },
+                        new
+                        {
+                            CategoryID = 6,
+                            CategoryName = "Thriller"
+                        },
+                        new
+                        {
+                            CategoryID = 7,
+                            CategoryName = "Sci-fi"
+                        },
+                        new
+                        {
+                            CategoryID = 8,
+                            CategoryName = "Fantasy"
+                        });
+                });
+
             modelBuilder.Entity("MovieCollection.Models.EnterMovieModel", b =>
                 {
                     b.Property<int>("MovieID")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("INTEGER");
 
-                    b.Property<string>("Category")
-                        .IsRequired()
-                        .HasColumnType("TEXT");
+                    b.Property<int>("CategoryID")
+                        .HasColumnType("INTEGER");
 
                     b.Property<string>("Director")
                         .IsRequired()
@@ -51,13 +106,15 @@ namespace MovieCollection.Migrations
 
                     b.HasKey("MovieID");
 
+                    b.HasIndex("CategoryID");
+
                     b.ToTable("Responses");
 
                     b.HasData(
                         new
                         {
                             MovieID = 1,
-                            Category = "Sci-Fi",
+                            CategoryID = 7,
                             Director = "Christopher Nolan",
                             Edited = false,
                             Rating = "PG-13",
@@ -67,7 +124,7 @@ namespace MovieCollection.Migrations
                         new
                         {
                             MovieID = 2,
-                            Category = "SuperHero",
+                            CategoryID = 1,
                             Director = "Jon Favreau",
                             Edited = false,
                             Rating = "PG-13",
@@ -77,13 +134,22 @@ namespace MovieCollection.Migrations
                         new
                         {
                             MovieID = 3,
-                            Category = "Horror",
+                            CategoryID = 5,
                             Director = "M. Night Shyamalan",
                             Edited = false,
                             Rating = "PG-13",
                             Title = "The Village",
                             Year = 2004
                         });
+                });
+
+            modelBuilder.Entity("MovieCollection.Models.EnterMovieModel", b =>
+                {
+                    b.HasOne("MovieCollection.Models.Category", "Category")
+                        .WithMany()
+                        .HasForeignKey("CategoryID")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
                 });
 #pragma warning restore 612, 618
         }

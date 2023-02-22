@@ -19,14 +19,28 @@ namespace MovieCollection.Models
         }
 
         public DbSet<EnterMovieModel> Responses { get; set; }
+        public DbSet<Category> Categories { get; set; }
 
+
+        // Seed data
         protected override void OnModelCreating(ModelBuilder mb)
         {
+            mb.Entity<Category>().HasData(
+                    new Category { CategoryID=1, CategoryName="Action"},
+                    new Category { CategoryID=2, CategoryName="Adventure"},
+                    new Category { CategoryID=3, CategoryName="Comedy"},
+                    new Category { CategoryID=4, CategoryName="Romance"},
+                    new Category { CategoryID=5, CategoryName="Horror"},
+                    new Category { CategoryID=6, CategoryName="Thriller"},
+                    new Category { CategoryID=7, CategoryName="Sci-fi"},
+                    new Category { CategoryID=8, CategoryName="Fantasy"}
+                );
+
             mb.Entity<EnterMovieModel>().HasData(
                 new EnterMovieModel
                 {
                     MovieID = 1,
-                    Category = "Sci-Fi",
+                    CategoryID = 7,
                     Title = "Inception",
                     Year = 2010,
                     Director = "Christopher Nolan",
@@ -35,7 +49,7 @@ namespace MovieCollection.Models
                 new EnterMovieModel
                 {
                     MovieID = 2,
-                    Category = "SuperHero",
+                    CategoryID = 1,
                     Title = "Iron Man",
                     Year = 2008,
                     Director = "Jon Favreau",
@@ -44,7 +58,7 @@ namespace MovieCollection.Models
                 new EnterMovieModel
                 {
                     MovieID = 3,
-                    Category = "Horror",
+                    CategoryID = 5,
                     Title = "The Village",
                     Year = 2004,
                     Director = "M. Night Shyamalan",
